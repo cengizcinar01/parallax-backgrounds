@@ -2,7 +2,7 @@ const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 const CANVAS_WIDTH = (canvas.width = 800);
 const CANVAS_HEIGHT = (canvas.height = 700);
-let gameSpeed = 3;
+let gameSpeed = 5;
 
 const backgroundLayer1 = new Image();
 backgroundLayer1.src = 'layer-1.png';
@@ -43,12 +43,18 @@ class Layer {
     }
 }
 
+const layer1 = new Layer(backgroundLayer1, 0.5);
+const layer2 = new Layer(backgroundLayer2, 0.5);
+const layer3 = new Layer(backgroundLayer3, 0.5);
 const layer4 = new Layer(backgroundLayer4, 0.5);
+const layer5 = new Layer(backgroundLayer5, 1);
 
 function animate() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     layer4.update();
     layer4.draw();
+    layer5.update();
+    layer5.draw();
     requestAnimationFrame(animate);
 }
 animate();
