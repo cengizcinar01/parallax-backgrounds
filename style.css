@@ -23,6 +23,7 @@ body {
 
 #slider {
     width: 80vw;
+    max-width: 800px;
 }
 
 p {
